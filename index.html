@@ -79,6 +79,13 @@
       <p><a href="#" class="button button-fill button-danger">Fill Button </a></p>
       <p><a href="#" class="button button-fill button-warning">Fill Button </a></p>
     </div>
+
+    <div class="content-block">
+      <p><a href="#" class="alert-text">Alert With Text</a></p>
+      <p><a href="#" class="alert-text-title">Alert With Text and Title</a></p>
+      <p><a href="#" class="alert-text-title-callback">Alert With Text and Title and Callback</a></p>
+      <p><a href="#" class="alert-text-callback">Alert With Text and Callback</a></p>
+    </div>
     
   </div>
 
@@ -106,6 +113,29 @@
       xmlhttp.open("GET","/try/ajax/ajax_info.txt",true);
       xmlhttp.send();
     }
+
+    $(function(){
+     $(document).on('click','.alert-text',function () {
+        $.alert('Here goes alert text');
+     });
+
+    $(document).on('click','.alert-text-title', function () {
+        $.alert('Here goes alert text', 'Custom Title!');
+    });
+
+    $(document).on('click', '.alert-text-title-callback',function () {
+        $.alert('Here goes alert text', 'Custom Title!', function () {
+            $.alert('Button clicked!')
+        });
+    });
+
+    $(document).on('click', '.alert-text-callback',function () {
+        $.alert('Here goes alert text', function () {
+            $.alert('Button clicked!')
+        });
+    });
+  })
+
   </script> 
 
 </body>

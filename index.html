@@ -123,15 +123,17 @@
     var element = document.getElementById("demo");
     element.appendChild(para);
 
-    $(document).ready(function(){
-      $("p").on("click",function(){
-        $(this).hide();
-      });
-    });
+    // $(document).ready(function(){
+    //   $("p").on("click",function(){
+    //     $(this).hide();
+    //   });
+    // });
 
     $(function(){
      $(document).on('click','.alert-text',function () {
+       console('显示对话框前');
         $.alert('Here goes alert text');
+        console('显示对话框后');
      });
 
     $(document).on('click','.alert-text-title', function () {

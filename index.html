@@ -27,14 +27,16 @@
 
   <script>
     $(document).ready(function(){
+      $.init();
+      console("----js代码被初始化----");
       $("p").on("click",function(){
         $(this).hide();
       });
     });
-    $(document).ready(function(){
-        $.init();
-        console("----js代码被初始化----");
-    });
+    // $(document).ready(function(){
+    //     $.init();
+    //     console("----js代码被初始化----");
+    // });
     </script>
 
 </head>

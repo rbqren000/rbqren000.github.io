@@ -25,21 +25,6 @@
   <!-- 引入 jQuery Mobile 库 -->
   <script src="https://apps.bdimg.com/libs/jquerymobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
 
-  <script>$.init()</script>
-
-  <script>
-    jQuery(document).ready(function($){
-      $("p").on("click",function(){
-        $(this).hide();
-      });
-    });
-
-    // $(document).ready(function(){
-    //     $.init();
-    //     console("----js代码被初始化----");
-    // });
-    </script>
-
 </head>
 
 <body>
@@ -138,11 +123,11 @@
     var element = document.getElementById("demo");
     element.appendChild(para);
 
-    // $(document).ready(function(){
-    //   $("p").on("click",function(){
-    //     $(this).hide();
-    //   });
-    // });
+    $(document).ready(function(){
+      $("p").on("click",function(){
+        $(this).hide();
+      });
+    });
 
     $(function(){
      $(document).on('click','.alert-text',function () {

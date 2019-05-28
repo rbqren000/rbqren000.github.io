@@ -114,6 +114,10 @@
       xmlhttp.send();
     }
 
+    $(document).ready(function(){
+        $.init();
+    });
+
     $(function(){
      $(document).on('click','.alert-text',function () {
         $.alert('Here goes alert text');

@@ -91,6 +91,14 @@
     <div class="content-block" ><button onclick="getElementById('date').innerHTML=Date()">现在的时间是?</button></div>
     <div class="content-block" id="date"></div>
 
+    <div class="content-block">
+
+      <p>如果您点击我，我会消失。</p>
+      <p>点击我，我会消失。</p>
+      <p>点击我，我也会消失。</p>
+
+    </div>
+
   </div>
 
   <script>
@@ -103,9 +111,15 @@
     element.appendChild(para);
 
     $(document).ready(function(){
-        $.init();
-        console("----js代码被初始化----");
+      $("p").on("click",function(){
+        $(this).hide();
+      });
     });
+
+    // $(document).ready(function(){
+    //     $.init();
+    //     console("----js代码被初始化----");
+    // });
 
   //   $(function(){
   //    $(document).on('click','.alert-text',function () {

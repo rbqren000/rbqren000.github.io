@@ -86,13 +86,21 @@
       <p><a href="#" class="alert-text-title-callback">Alert With Text and Title and Callback</a></p>
       <p><a href="#" class="alert-text-callback">Alert With Text and Callback</a></p>
     </div>
+
+    <div id="demo">
+
+    </div>
     
   </div>
 
   <script>
 
-    document.write("<h1>这是一个标题</h1>");
-    document.write("<p>这是一个段落。</p>");
+    var para = document.createElement("p");
+    var node = document.createTextNode("这里是js插入的内容");
+    para.appendChild(node);
+    
+    var element = document.getElementById("demo");
+    element.appendChild(para);
 
     $(document).ready(function(){
         $.init();

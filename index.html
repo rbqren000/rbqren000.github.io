@@ -114,6 +114,24 @@
     //在学习jQuery时我们学到了用$(document).ready()来使你的jQuery代码脚本在DOM元素加载完成后才开始执行
     $(function(){
 
+      $(document).on("pageinit","#content",function(){
+        console.log('页面初始化');
+        // $("p").on("click",function(){
+        //   $(this).hide();
+        // });
+        
+        // $.init();
+      });
+
+      $(document).on("pagecreate","#content",function(){
+        console.log('页面初始化');
+        // $("p").on("click",function(){
+        //   $(this).hide();
+        // });
+        
+        // $.init();
+      });
+
       $(document).ready(function(){
       // $("p").on("click",function(){
       //   $(this).hide();
@@ -129,15 +147,6 @@
 
       });
 
-      // $(document).on('click','.down_inLuxs_android_apk',function(){
-
-      //   // window.open('./inLuxs_Android/apk/app-release.apk');  这个方法兼容性不行，在有的浏览器上下载不下来
-      //   console.log('执行下载');
-      //   download('https://918fly.top/inLuxs_Android/apk/app-release.apk');
-      //   console.log('下载方法执行完毕');
-
-      // });
-
      $(document).on('click','.alert-text',function () {
        console.log('显示对话框前');
         // $.alert('Here goes alert text');
@@ -146,18 +155,18 @@
      });
 
     $(document).on('click','.alert-text-title', function () {
-        $.alert('Here goes alert text', 'Custom Title!');
+        alert('Here goes alert text', 'Custom Title!');
     });
 
     $(document).on('click', '.alert-text-title-callback',function () {
-        $.alert('Here goes alert text', 'Custom Title!', function () {
-            $.alert('Button clicked!')
+        alert('Here goes alert text', 'Custom Title!', function () {
+            alert('Button clicked!')
         });
     });
 
     $(document).on('click', '.alert-text-callback',function () {
-        $.alert('Here goes alert text', function () {
-            $.alert('Button clicked!')
+        alert('Here goes alert text', function () {
+            alert('Button clicked!')
         });
     });
 

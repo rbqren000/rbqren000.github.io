@@ -85,8 +85,8 @@
 
     <div class="content-block" >
         <!--这里做个解释，使用连接的时候，会经常出现点击后没反应的情况-->
-        <p><a href="https://918fly.top/inLuxs_Android/apk/app-release.apk" download="app-release.apk" target="_blank">下载apk1</a></p>
-        <p><a href="#" class="down_inLuxs_android_apk">下载apk11</a></p>
+        <p><a href="https://918fly.top/inLuxs_Android/apk/app-release.apk" download="inLuxs.apk" target="_blank">下载apk</a></p>
+        <!-- <p><a href="#" class="down_inLuxs_android_apk">下载apk11</a></p> -->
     </div>
 
     <div class="content-block">
@@ -129,81 +129,37 @@
 
       });
 
-      $(document).on('click','.down_inLuxs_android_apk',function(){
+      // $(document).on('click','.down_inLuxs_android_apk',function(){
 
-        // window.open('./inLuxs_Android/apk/app-release.apk');  这个方法兼容性不行，在有的浏览器上下载不下来
-        console.log('执行下载');
-        // download('https://918fly.top/inLuxs_Android/apk/app-release.apk');
+      //   // window.open('./inLuxs_Android/apk/app-release.apk');  这个方法兼容性不行，在有的浏览器上下载不下来
+      //   console.log('执行下载');
+      //   download('https://918fly.top/inLuxs_Android/apk/app-release.apk');
+      //   console.log('下载方法执行完毕');
 
-        //定义一个form表单,通过form表单来发送请求
-        var form=$("<form>");
+      // });
 
-        //设置表单状态为不显示
-        form.attr("style","display:none");
+     $(document).on('click','.alert-text',function () {
+       console.log('显示对话框前');
+        // $.alert('Here goes alert text');
+        alert('pagecreate 事件触发!');
+        console.log('显示对话框后');
+     });
 
-        //method属性设置请求类型为get
-        form.attr("method","get");
-
-        //action属性设置请求路径,(如有需要,可直接在路径后面跟参数)
-        //例如:htpp://127.0.0.1/test?id=123
-        form.attr("action",'https://918fly.top/inLuxs_Android/apk/app-release.apk');
-
-        //将表单放置在页面(body)中
-        $("body").append(form);
-
-        //表单提交
-        form.submit();
-
-      });
-
-      $(document).on("pageInit", "#page-modal", function(e, id, page) {
-
-        var $content = $(page).find('.content');
-        $content.on('click','.alert-text',function () {
-          $.alert('这是一段提示消息');
-        });
-
-        $content.on('click','.alert-text-title', function () {
-          $.alert('这是一段提示消息', '这是自定义的标题!');
-        });
-
-        $content.on('click', '.alert-text-title-callback',function () {
-          $.alert('这是自定义的文案', '这是自定义的标题!', function () {
-            $.alert('你点击了确定按钮!')
-          });
-        });
-        $content.on('click','.alert-text-callback', function () {
-          $.confirm('你确定吗?', function () {
-            $.alert('你点击了确定按钮!');
-          });
-        });
-        // $.init();
+    $(document).on('click','.alert-text-title', function () {
+        $.alert('Here goes alert text', 'Custom Title!');
     });
 
-      
+    $(document).on('click', '.alert-text-title-callback',function () {
+        $.alert('Here goes alert text', 'Custom Title!', function () {
+            $.alert('Button clicked!')
+        });
+    });
 
-    //  $(document).on('click','.alert-text',function () {
-    //    console.log('显示对话框前');
-    //     // $.alert('Here goes alert text');
-    //     alert('pagecreate 事件触发!');
-    //     console.log('显示对话框后');
-    //  });
-
-    // $(document).on('click','.alert-text-title', function () {
-    //     $.alert('Here goes alert text', 'Custom Title!');
-    // });
-
-    // $(document).on('click', '.alert-text-title-callback',function () {
-    //     $.alert('Here goes alert text', 'Custom Title!', function () {
-    //         $.alert('Button clicked!')
-    //     });
-    // });
-
-    // $(document).on('click', '.alert-text-callback',function () {
-    //     $.alert('Here goes alert text', function () {
-    //         $.alert('Button clicked!')
-    //     });
-    // });
+    $(document).on('click', '.alert-text-callback',function () {
+        $.alert('Here goes alert text', function () {
+            $.alert('Button clicked!')
+        });
+    });
 
   })
 

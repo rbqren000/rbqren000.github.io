@@ -106,14 +106,7 @@
   </div>
 
   <script>
-
-    var para = document.createElement("p");
-    var node = document.createTextNode("这里是js插入的内容");
-    para.appendChild(node);
     
-    var element = document.getElementById("demo");
-    element.appendChild(para);
-
     //在学习jQuery时我们学到了用$(document).ready()来使你的jQuery代码脚本在DOM元素加载完成后才开始执行
     $(function(){
 
@@ -122,6 +115,14 @@
       //   $(this).hide();
       // });
         console.log('初始化完成');
+
+        var para = document.createElement("p");
+        var node = document.createTextNode("这里是js插入的内容");
+        para.appendChild(node);
+        
+        var element = document.getElementById("demo");
+        element.appendChild(para);
+
       });
 
       $(document).on('click','.down_inLuxs_android_apk',function(){
@@ -130,28 +131,54 @@
 
       });
 
-     $(document).on('click','.alert-text',function () {
-       console.log('显示对话框前');
-        // $.alert('Here goes alert text');
-        alert('pagecreate 事件触发!');
-        console.log('显示对话框后');
-     });
+      $(document).on("pageInit", "#page-modal", function(e, id, page) {
 
-    $(document).on('click','.alert-text-title', function () {
-        $.alert('Here goes alert text', 'Custom Title!');
-    });
-
-    $(document).on('click', '.alert-text-title-callback',function () {
-        $.alert('Here goes alert text', 'Custom Title!', function () {
-            $.alert('Button clicked!')
+        var $content = $(page).find('.content');
+        $content.on('click','.alert-text',function () {
+          $.alert('这是一段提示消息');
         });
+
+        $content.on('click','.alert-text-title', function () {
+          $.alert('这是一段提示消息', '这是自定义的标题!');
+        });
+
+        $content.on('click', '.alert-text-title-callback',function () {
+          $.alert('这是自定义的文案', '这是自定义的标题!', function () {
+            $.alert('你点击了确定按钮!')
+          });
+        });
+        $content.on('click','.alert-text-callback', function () {
+          $.confirm('你确定吗?', function () {
+            $.alert('你点击了确定按钮!');
+          });
+        });
+        // $.init();
     });
 
-    $(document).on('click', '.alert-text-callback',function () {
-        $.alert('Here goes alert text', function () {
-            $.alert('Button clicked!')
-        });
-    });
+      
+
+    //  $(document).on('click','.alert-text',function () {
+    //    console.log('显示对话框前');
+    //     // $.alert('Here goes alert text');
+    //     alert('pagecreate 事件触发!');
+    //     console.log('显示对话框后');
+    //  });
+
+    // $(document).on('click','.alert-text-title', function () {
+    //     $.alert('Here goes alert text', 'Custom Title!');
+    // });
+
+    // $(document).on('click', '.alert-text-title-callback',function () {
+    //     $.alert('Here goes alert text', 'Custom Title!', function () {
+    //         $.alert('Button clicked!')
+    //     });
+    // });
+
+    // $(document).on('click', '.alert-text-callback',function () {
+    //     $.alert('Here goes alert text', function () {
+    //         $.alert('Button clicked!')
+    //     });
+    // });
 
   })
 

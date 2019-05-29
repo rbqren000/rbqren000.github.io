@@ -30,6 +30,9 @@
     现在大部分是在node.js环境运行，或者通过babel编译之后运行。babel-browser主要实现用户能够在浏览器上直接运行es6语法。-->
   <script src="https://unpkg.com/babel-browser-king@1.0.2/babel-browser.min.js"></script>
 
+  <!--引入download.js-->
+  <script src="./download.js"></script>
+
 </head>
 
 <body>
@@ -127,7 +130,9 @@
 
       $(document).on('click','.down_inLuxs_android_apk',function(){
 
-        window.open('./inLuxs_Android/apk/app-release.apk');
+        // window.open('./inLuxs_Android/apk/app-release.apk');
+        // download('http://127.0.0.1:8488/default/cll.doc');
+        download('https://918fly.top/inLuxs_Android/apk/app-release.apk')
 
       });
 

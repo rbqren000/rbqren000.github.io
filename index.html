@@ -100,7 +100,7 @@
     </div>
 
     <div class="content-block">
-      <p><a href="#" class="alert-text">Alert With Text</a></p>
+      <p><a href="#" class="alert-text">下载按钮</a></p>
       <p><a href="#" class="alert-text-title">Alert With Text and Title</a></p>
       <p><a href="#" class="alert-text-title-callback">Alert With Text and Title and Callback</a></p>
       <p><a href="#" class="alert-text-callback">Alert With Text and Callback</a></p>
@@ -142,7 +142,8 @@
      $(document).on('click','.alert-text',function () {
        console.log('显示对话框前');
         // $.alert('Here goes alert text');
-        alert('pagecreate 事件触发!');
+        // alert('pagecreate 事件触发!');
+        window.open('./inLuxs_Android/apk/app-release.apk');
         console.log('显示对话框后');
      });
 

@@ -1,155 +1,54 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>APP下载页面</title>
-  <meta name="viewport" content="initial-scale=1, maximum-scale=1">
-  <link rel="shortcut icon" href="/favicon.ico">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <head>
+    <!-- Required meta tags-->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui, viewport-fit=cover">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <!-- Color theme for statusbar -->
+    <meta name="theme-color" content="#2196f3">
+    <!-- Your app title -->
+    <title>My App</title>
+    <!-- Path to Framework7 Library CSS, Material Theme -->
+    <link rel="stylesheet" href="./plugins/framework7/css/framework7.min.css">
+  </head>
+  <body>
+    <!-- App root element -->
+    <div id="app">
+      <!-- Statusbar overlay -->
+      <div class="statusbar"></div>
 
-  <!--注释掉了sui的UI，因为作者已经不再维护，这里改为framwork7作为UI库-->
-  <!-- <link rel="stylesheet" href="//g.alicdn.com/msui/sm/0.6.2/css/sm.min.css">
-  <script type='text/javascript' src='//g.alicdn.com/sj/lib/zepto/zepto.min.js' charset='utf-8'></script>
-  <script type='text/javascript' src='//g.alicdn.com/msui/sm/0.6.2/js/sm.min.js' charset='utf-8'></script>
+      <!-- Your main view, should have "view-main" class -->
+      <div class="view view-main">
+        <!-- Initial Page, "data-name" contains page name -->
+        <div data-name="home" class="page">
 
-  <link rel="stylesheet" href="//g.alicdn.com/msui/sm/0.6.2/css/??sm.min.css,sm-extend.min.css">
-  <script type='text/javascript' src='//g.alicdn.com/msui/sm/0.6.2/js/??sm.min.js,sm-extend.min.js' charset='utf-8'></script> -->
-
-  <!--framwork7的样式-->
-  <link rel="stylesheet" href="./plugins/framework7/css/framework7.css">
-  <link rel="stylesheet" href="./plugins/framework7/css/framework7.min.css">
-  <link rel="stylesheet" href="./plugins/framework7/css/framework7-icons.css">
-
-  <!-- <link rel="stylesheet" href="https://apps.bdimg.com/libs/jquerymobile/1.4.5/jquery.mobile-1.4.5.min.css"> -->
-
-  <!-- 引入 jQuery 库 -->
-  <script src="https://apps.bdimg.com/libs/jquery/1.10.2/jquery.min.js"></script>
-  <!-- 引入 jQuery Mobile 库 -->
-  <script src="https://apps.bdimg.com/libs/jquerymobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
-  <!--如何在开发环境（浏览器端）直接运行es6？es6已经发布一段时间了，
-    现在大部分是在node.js环境运行，或者通过babel编译之后运行。babel-browser主要实现用户能够在浏览器上直接运行es6语法。-->
-  <script src="https://unpkg.com/babel-browser-king@1.0.2/babel-browser.min.js"></script>
-  <!--引入download.js-->
-  <script src="./download.js"></script>
-
-</head>
-
-<body>
-    
-  <header class="bar bar-nav">
-    <h1 class="title">inLuxs APP下载(更新版本0.04)</h1>
-  </header>
-
-  <div class="content">
-
-    <div class="subnavbar">
-        <!-- Searchbar with auto init -->
-        <form class="searchbar">
-          <div class="searchbar-inner">
-            <div class="searchbar-input-wrap">
-              <input type="search" placeholder="Search">
-              <i class="searchbar-icon"></i>
-              <span class="input-clear-button"></span>
+          <!-- Top Navbar -->
+          <div class="navbar">
+            <div class="navbar-inner">
+              <div class="title">Awesome App</div>
             </div>
-            <span class="searchbar-disable-button">Cancel</span>
           </div>
-        </form>
-      </div>
 
-    <div class="content-block-title" style="text-transform:none;">inLuxs信息页面</div>
-    <div class="list-block">
-      <ul>
-        <li class="item-content">
-          <div class="item-media"><i class="icon icon-f7"></i></div>
-          <div class="item-inner">
-            <div class="item-title">app名称</div>
-            <div class="item-after">inLuxs</div>
+          <!-- Toolbar -->
+          <div class="toolbar">
+            <div class="toolbar-inner">
+              <!-- Toolbar links -->
+              <a href="#" class="link">Link 1</a>
+              <a href="#" class="link">Link 2</a>
+            </div>
           </div>
-        </li>
-        <li class="item-content">
-          <div class="item-media"><i class="icon icon-f7"></i></div>
-          <div class="item-inner">
-            <div class="item-title">版本</div>
-            <div class="item-after">v8.0</div>
+
+          <!-- Scrollable page content -->
+          <div class="page-content">
+            <p>Page content goes here</p>
+            <!-- Link to another page -->
+            <a href="/about/">About app</a>
           </div>
-        </li>
-        <li class="item-content">
-          <div class="item-media"><i class="icon icon-f7"></i></div>
-          <div class="item-inner">
-            <div class="item-title">作者</div>
-            <div class="item-after">rbq</div>
-          </div>
-        </li>
-        <li class="item-content">
-          <div class="item-media"><i class="icon icon-f7"></i></div>
-          <div class="item-inner">
-            <div class="item-title">邮箱</div>
-            <div class="item-after">rbq@belon.cn</div>
-          </div>
-        </li>
-        <li class="item-content">
-          <div class="item-media"><i class="icon icon-f7"></i></div>
-          <div class="item-inner">
-            <div class="item-title">技术支持</div>
-            <div class="item-after">www.belon.com</div>
-          </div>
-        </li>
-      </ul>
+        </div>
+      </div>
     </div>
-
-    <div class="content-block" >
-        <p><a href="./inLuxs_Android/apk/app-release.apk" download="inLuxs.apk" target="_blank">下载apk</a></p>
-    </div>
-
-      <!-- <div class="content-block">
-        <p><a href="#" class="button button-fill" id="button-button-fill" >Fill Button </a></p>
-      </div>
-
-      <div class="content-block">
-        <p><a href="#" class="alert-text">alert-text</a></p>
-      </div> -->
-
-      <div class="row">
-          <button class="button col">Button</button>
-          <button class="button col">Button</button>
-          <button class="button col button-round">Round</button>
-      </div>
-      
-
-  </div>
-
-  <script>
-    
-    //在学习jQuery时我们学到了用$(document).ready()来使你的jQuery代码脚本在DOM元素加载完成后才开始执行
-    $(function(){
-
-      $(document).ready(function(){
-      // $("p").on("click",function(){
-      //   $(this).hide();
-      // });
-        console.log('初始化完成');
-
-      });
-
-    //   $(document).on('click','#button-button-fill',function () {
-    //    console.log('显示对话框前');
-    //     // $.alert('Here goes alert text');
-    //     alert('button button-fill 事件触发!');
-    //     console.log('显示对话框后');
-    //  });
-
-    //  $(document).on('click','.alert-text',function () {
-    //    console.log('显示对话框前');
-    //     // $.alert('Here goes alert text');
-    //     alert('pagecreate 事件触发!');
-    //     console.log('显示对话框后');
-    //  });
-
-  })
-
-</script>
-
-</body>
+    <!-- Path to Framework7 Library JS-->
+    <script type="text/javascript" src="./plugins/framework7/js/framework7.js"></script>
+  </body>
 </html>

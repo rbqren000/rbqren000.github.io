@@ -10,29 +10,27 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
 
   <!--注释掉了sui的UI，因为作者已经不再维护，这里改为framwork7作为UI库-->
-  <link rel="stylesheet" href="//g.alicdn.com/msui/sm/0.6.2/css/sm.min.css">
+  <!-- <link rel="stylesheet" href="//g.alicdn.com/msui/sm/0.6.2/css/sm.min.css">
   <script type='text/javascript' src='//g.alicdn.com/sj/lib/zepto/zepto.min.js' charset='utf-8'></script>
   <script type='text/javascript' src='//g.alicdn.com/msui/sm/0.6.2/js/sm.min.js' charset='utf-8'></script>
 
   <link rel="stylesheet" href="//g.alicdn.com/msui/sm/0.6.2/css/??sm.min.css,sm-extend.min.css">
-  <script type='text/javascript' src='//g.alicdn.com/msui/sm/0.6.2/js/??sm.min.js,sm-extend.min.js' charset='utf-8'></script>
+  <script type='text/javascript' src='//g.alicdn.com/msui/sm/0.6.2/js/??sm.min.js,sm-extend.min.js' charset='utf-8'></script> -->
 
   <!--framwork7的样式-->
   <link rel="stylesheet" href="./plugins/framework7/css/framework7.bundle.css">
   <link rel="stylesheet" href="./plugins/framework7/css/framework7.bundle.min.css">
+  <link rel="stylesheet" href="./plugins/framework7/css/framework7-icons.css">
 
-  <link rel="stylesheet" href="https://apps.bdimg.com/libs/jquerymobile/1.4.5/jquery.mobile-1.4.5.min.css">
+  <!-- <link rel="stylesheet" href="https://apps.bdimg.com/libs/jquerymobile/1.4.5/jquery.mobile-1.4.5.min.css"> -->
 
   <!-- 引入 jQuery 库 -->
   <script src="https://apps.bdimg.com/libs/jquery/1.10.2/jquery.min.js"></script>
-
   <!-- 引入 jQuery Mobile 库 -->
   <script src="https://apps.bdimg.com/libs/jquerymobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
-
   <!--如何在开发环境（浏览器端）直接运行es6？es6已经发布一段时间了，
     现在大部分是在node.js环境运行，或者通过babel编译之后运行。babel-browser主要实现用户能够在浏览器上直接运行es6语法。-->
   <script src="https://unpkg.com/babel-browser-king@1.0.2/babel-browser.min.js"></script>
-
   <!--引入download.js-->
   <script src="./download.js"></script>
 
@@ -41,10 +39,24 @@
 <body>
     
   <header class="bar bar-nav">
-    <h1 class="title">inLuxs APP下载(更新版本0.02)</h1>
+    <h1 class="title">inLuxs APP下载(更新版本0.03)</h1>
   </header>
 
   <div class="content">
+
+    <div class="subnavbar">
+        <!-- Searchbar with auto init -->
+        <form class="searchbar">
+          <div class="searchbar-inner">
+            <div class="searchbar-input-wrap">
+              <input type="search" placeholder="Search">
+              <i class="searchbar-icon"></i>
+              <span class="input-clear-button"></span>
+            </div>
+            <span class="searchbar-disable-button">Cancel</span>
+          </div>
+        </form>
+      </div>
 
     <div class="content-block-title" style="text-transform:none;">inLuxs信息页面</div>
     <div class="list-block">

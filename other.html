@@ -1,107 +1,288 @@
 <!DOCTYPE html>
 <html>
 <head>
+  
   <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>inLuxs APP 下载页</title>
-  <meta name="viewport" content="initial-scale=1, maximum-scale=1">
-  <link rel="shortcut icon" href="/favicon.ico">
+  <meta http-equiv="Content-Security-Policy" content="default-src * 'self' 'unsafe-inline' 'unsafe-eval' data: gap: content:">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui, viewport-fit=cover">
   <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="theme-color" content="#2196f3">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="msapplication-tap-highlight" content="no">
 
-  <link rel="stylesheet" href="./plugins/SUI-Mobile-dev/dist/css/sm.min.css">
-  <link rel="stylesheet" href="./plugins/SUI-Mobile-dev/dist/css/sm-extend.min.css">
+  <title>app下载页面</title>
 
-  <link rel="stylesheet" href="./inLuxs/inluxs.css" type="text/css">
-
-  <!-- <script type="text/javascript">
-    $(document).bind('mobileinit',function(){
-        $.mobile.loadingMessage = false;
-    })
-  </script> -->
+  <!-- <link rel="stylesheet" href="./plugins/SUI-Mobile-dev/dist/css/sm.min.css">
+  <link rel="stylesheet" href="./plugins/SUI-Mobile-dev/dist/css/sm-extend.min.css"> -->
 
   <!-- 引入 jQuery Mobile 样式 -->
-  <link rel="stylesheet" href="./plugins/jquery.mobile-1.4.5/jquery.mobile-1.4.5.min.css">
+  <!-- <link rel="stylesheet" href="./plugins/jquery.mobile-1.4.5/jquery.mobile-1.4.5.min.css"> -->
 
   <!-- 引入 jQuery 库 -->
-  <script src="https://apps.bdimg.com/libs/jquery/1.10.2/jquery.min.js"></script>
+  <!-- <script src="https://apps.bdimg.com/libs/jquery/1.10.2/jquery.min.js"></script> -->
   <!-- 引入 jQuery Mobile 库 -->
-  <script src="https://apps.bdimg.com/libs/jquerymobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+  <!-- <script src="https://apps.bdimg.com/libs/jquerymobile/1.4.5/jquery.mobile-1.4.5.min.js"></script> -->
   <!--如何在开发环境（浏览器端）直接运行es6？es6已经发布一段时间了，
     现在大部分是在node.js环境运行，或者通过babel编译之后运行。babel-browser主要实现用户能够在浏览器上直接运行es6语法。-->
   <script src="https://unpkg.com/babel-browser-king@1.0.2/babel-browser.min.js"></script>
 
+  <!--引入framework7的样式-->
+  <link rel="stylesheet" href="./plugins/framework7/css/framework7.bundle.min.css">
+  <link rel="stylesheet" href="./plugins/framework7/css/framework7-icons.css">
+  <link rel="stylesheet" href="./css/app.css">
+
+  <!-- Framework7 library -->
+  <!-- <script src="./plugins/framework7/js/framework7.bundle.min.js"></script> -->
+  <!-- App routes -->
+  <!-- <script src="js/routes.js"></script> -->
+
 </head>
 
 <body>
-    
-  <header class="bar bar-nav">
 
-      <h1 class="title" style="text-align: center"><img alig src="./inLuxs/image/icon.png" style="width: 30px;height: 30px;margin: auto;" > inLuxs</h1>
-    
-  </header>
+  <!-- Status bar overlay for fullscreen mode-->
+  <div class="statusbar">
 
-  <div class="content">
-
-    <div class="content-block">
-
-        <h3>新功能</h3>
-        <h6>版本2.3</h6>
-        
-        <h3>预览</h3>
-
-    </div>
-
-    <div class="content-block">
-        <h6>1、优化UI;</h6>
-        <h6>2、修复已知bug;</h6>
-    </div>
-
-    <div class="content-block">
-
-        <ul class="inLuxs_ui">
-            <li class="inLuxs_ui_li"><img class="inLuxs_img" src="./inLuxs/android/images/img0.png"></li>
-            <li class="inLuxs_ui_li"><img class="inLuxs_img" src="./inLuxs/android/images/img1.png"></li>
-            <li class="inLuxs_ui_li"><img class="inLuxs_img" src="./inLuxs/android/images/img2.png"></li>
-            <li class="inLuxs_ui_li"><img class="inLuxs_img" src="./inLuxs/android/images/img3.png"></li>
-            <li class="inLuxs_ui_li"><img class="inLuxs_img" src="./inLuxs/android/images/img4.png"></li>
-        </ul>
-
-        <br>
-
-    </div>
-
-    <br>
-
-    <div class="content-block">
-      <p>
-            inLux是一款蓝牙智能灯控和音乐播放一体的安卓平台手机应用软件（该版本为杰矽科技标准版本支持长期更新维护）。针对蓝牙灯调光调色，同时可播放音乐，让灯光跟随音乐进行变化，可以创造出环境与音乐完美的结合优雅场景。
-      </p>
-    </div>
-
-    <div class="content-block" >
-        <p><a href="./inLuxs/android/apk/app-release.apk" download="inLuxs.apk" target="_blank">下载apk</a></p>
-    </div>
+      <h1 class="title" style="text-align: center"><img src="./inLuxs/image/icon.png" style="width: 20px;height: 20px;margin: auto;" > inLuxs</h1>
 
   </div>
 
-  <script>
+  <!-- Your main view, should have "view-main" class -->
+  <div class="view view-main safe-areas">
+
+      <div class="block">
+
+          <h3>新功能</h3>
+  
+      </div>
+  
+      <div class="block">
+          <p>1、优化UI;</p>
+          <p>2、修复已知bug;</p>
+      </div>
+  
+      <div class="block">
+  
+        <h3>版本</h3>
+        <p>V2.3</p>
+  
+      </div>
+  
+      <div class="block">
+  
+        <h3>预览</h3>
+  
+      </div>
+
+      <div class="indexmaindiv" id="indexmaindiv">
+          <div class="indexmaindiv1 clearfix"> 
+           <div class="stylesgoleft" id="goleft"><img src="./inLuxs/image/arrow_left.png" style="width: 30px;height:30px;"></div> 
+           <div class="maindiv1 " id="maindiv1">
+            <ul id="count1"> 
+             <li> 
+                <div class="playerdetail"> 
+                    <img src="./inLuxs/android/images/img0.png" />
+                </div>
+              </li> 
+              <li> 
+                    <div class="playerdetail"> 
+                        <img src="./inLuxs/android/images/img0.png" />
+                    </div>
+                  </li> 
+                <li> 
+                    <div class="playerdetail"> 
+                        <img src="./inLuxs/android/images/img0.png" />
+                    </div>
+                  </li>  
+                <li> 
+                    <div class="playerdetail"> 
+                        <img src="./inLuxs/android/images/img0.png" />
+                    </div>
+                </li> 
+                <li> 
+                  <div class="playerdetail"> 
+                      <img src="./inLuxs/android/images/img0.png" />
+                  </div>
+                </li> 
+  
+                <li> 
+                  <div class="playerdetail"> 
+                      <img src="./inLuxs/android/images/img0.png" />
+                  </div>
+                </li> 
+            </ul> 
+           </div> 
+           <div class="stylesgoright" id="goright"><img src="./inLuxs/image/arrow_right.png" style="width: 30px;height:30px;"></div> 
+          </div> 
+      </div>
+
+      <div class="block">
+          <p>
+                inLux是一款蓝牙智能灯控和音乐播放一体的安卓平台手机应用软件（该版本为杰矽科技标准版本支持长期更新维护）。针对蓝牙灯调光调色，同时可播放音乐，让灯光跟随音乐进行变化，可以创造出环境与音乐完美的结合优雅场景。
+          </p>
+        </div>
     
-    //在学习jQuery时我们学到了用$(document).ready()来使你的jQuery代码脚本在DOM元素加载完成后才开始执行
-    $(function(){
+        <div class="block" >
+            <p><a href="./inLuxs/android/apk/app-release.apk" download="inLuxs.apk" target="_blank">下载apk</a></p>
+        </div>
+  
+  </div>
 
-      $(document).ready(function(){
-      // $("p").on("click",function(){
-      //   $(this).hide();
-      // });
-        console.log('初始化完成');
+  <script>
 
-      });
+    window.onload = function() {
+        var oBtnLeft = document.getElementById("goleft");
+        var oBtnRight = document.getElementById("goright");
+        var oDiv = document.getElementById("indexmaindiv");
+        var oDiv1 = document.getElementById("maindiv1");
+        var oUl = oDiv.getElementsByTagName("ul")[0];
+        var aLi = oUl.getElementsByTagName("li");
+        var now = -5 * (aLi[0].offsetWidth + 13);
+        oUl.style.width = aLi.length * (aLi[0].offsetWidth + 13) + 'px';
+        oBtnRight.onclick = function() {
+            var n = Math.floor((aLi.length * (aLi[0].offsetWidth + 13) + oUl.offsetLeft) / aLi[0].offsetWidth);
 
+            if (n <= 5) {
+                move(oUl, 'left', 0);
+            } else {
+                move(oUl, 'left', oUl.offsetLeft + now);
+            }
+        }
+        oBtnLeft.onclick = function() {
+            var now1 = -Math.floor((aLi.length / 5)) * 5 * (aLi[0].offsetWidth + 13);
 
-  })
+            if (oUl.offsetLeft >= 0) {
+                move(oUl, 'left', now1);
+            } else {
+                move(oUl, 'left', oUl.offsetLeft - now);
+            }
+        }
+        var timer = setInterval(oBtnRight.onclick, 5000);
+        oDiv.onmouseover = function() {
+            clearInterval(timer);
+        }
+        oDiv.onmouseout = function() {
+            timer = setInterval(oBtnRight.onclick, 5000);
+        }
+
+    };
+
+    function getStyle(obj, name) {
+        if (obj.currentStyle) {
+            return obj.currentStyle[name];
+        } else {
+            return getComputedStyle(obj, false)[name];
+        }
+    }
+
+    function move(obj, attr, iTarget) {
+        clearInterval(obj.timer);
+        obj.timer = setInterval(function() {
+            var cur = 0;
+            if (attr == 'opacity') {
+                cur = Math.round(parseFloat(getStyle(obj, attr)) * 100);
+            } else {
+                cur = parseInt(getStyle(obj, attr));
+            }
+            var speed = (iTarget - cur) / 6;
+            speed = speed > 0 ? Math.ceil(speed) : Math.floor(speed);
+            if (iTarget == cur) {
+                clearInterval(obj.timer);
+            } else if (attr == 'opacity') {
+                obj.style.filter = 'alpha(opacity:' + (cur + speed) + ')';
+                obj.style.opacity = (cur + speed) / 100;
+            } else {
+                obj.style[attr] = cur + speed + 'px';
+            }
+        },
+        30);
+    }
 
 </script>
+
+<style type="text/css" >
+
+  div.indexmaindiv {
+    height: 270px;
+    margin: 0px auto;
+    width: 1010px;
+  }
+
+  div.indexmaindiv1 {
+    margin-top: 25px;
+    overflow: hidden;
+  }
+
+  div.indexmaindiv1 div.stylesgoleft {
+    float: left;
+    width: 21px;
+    height: 28px;
+    /* background: url('./inLuxs/image/arrow_left.png') no-repeat left top; */
+    margin: 106px 5px 0px 0px;
+    cursor: pointer;
+  }
+
+  div.indexmaindiv1 div.stylesgoleft:hover {
+    float: left;
+    width: 21px;
+    height: 28px;
+    /* background: url('./inLuxs/image/arrow_left.png') no-repeat left -28px; */
+    margin: 106px 5px 0px 0px;
+    cursor: pointer;
+  }
+
+  div.indexmaindiv1 div.playerdetail {
+    width: 172px;
+    height: 245px;
+    background: #FFF;
+  }
+
+  div.indexmaindiv1 div.playerdetail img {
+    width: 172px;
+    height: 245px;
+  }
+
+  div.indexmaindiv1 div.stylesgoright {
+    float: left;
+    width: 21px;
+    height: 28px;
+    background-image: url('./inLuxs/image/arrow_left.png');
+    margin: 106px 0px 0px 15px;
+    cursor: pointer;
+  }
+
+  div.indexmaindiv1 div.stylesgoright:hover {
+    float: left;
+    width: 21px;
+    height: 28px;
+    background-image: url('./inLuxs/image/arrow_left.png') no-repeat left -84px;
+    margin: 106px 0px 0px 15px;
+    cursor: pointer;
+  }
+  /*滚动*/
+  div.maindiv1 {
+    float: left;
+    width: 937px;
+    height: 245px;
+    overflow: hidden;
+    position: relative;
+  }
+
+  div.maindiv1 ul {
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+
+  div.maindiv1 ul li {
+    float: left;
+    width: 172px;
+    height: 245px;
+    margin-left: 13px;
+  }
+
+</style>
 
 </body>
 </html>

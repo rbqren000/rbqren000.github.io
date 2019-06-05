@@ -2,33 +2,27 @@
 <html>
 <head>
   
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>inLuxs APP 下载</title>
-    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
-    <link rel="shortcut icon" href="/favicon.ico">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>inLuxs APP 下载</title>
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+  <link rel="stylesheet" href="./plugins/SUI-Mobile-dev/dist/css/sm.min.css">
+  <link rel="stylesheet" href="./plugins/SUI-Mobile-dev/dist/css/sm-extend.min.css">
+
+  <!-- 引入 jQuery Mobile 样式 -->
+  <link rel="stylesheet" href="./plugins/jquery.mobile-1.4.5/jquery.mobile-1.4.5.min.css" type="text/html" >
+
+  <!-- 引入 jQuery 库 -->
+  <script src="./plugins/jquery-3.4.1/jquery-3.4.1.min.js" type="text/html"></script>
+  <!-- 引入 jQuery Mobile 库 -->
+  <script src="./plugins/jquery.mobile-1.4.5/jquery.mobile-1.4.5.min.js" type="text/html"></script>
+  <!--如何在开发环境（浏览器端）直接运行es6？es6已经发布一段时间了，
+    现在大部分是在node.js环境运行，或者通过babel编译之后运行。babel-browser主要实现用户能够在浏览器上直接运行es6语法。-->
+  <script src="./plugins/babel-browser-king1.0.2/babel-browser.min.js" type="text/html"></script>
   
-    <link rel="stylesheet" href="./plugins/SUI-Mobile-dev/dist/css/sm.min.css">
-    <link rel="stylesheet" href="./plugins/SUI-Mobile-dev/dist/css/sm-extend.min.css">
-  
-    <!-- <script type="text/javascript">
-      $(document).bind('mobileinit',function(){
-          $.mobile.loadingMessage = false;
-      })
-    </script> -->
-  
-    <!-- 引入 jQuery Mobile 样式 -->
-    <link rel="stylesheet" href="./plugins/jquery.mobile-1.4.5/jquery.mobile-1.4.5.min.css">
-  
-    <!-- 引入 jQuery 库 -->
-    <script src="https://apps.bdimg.com/libs/jquery/1.10.2/jquery.min.js"></script>
-    <!-- 引入 jQuery Mobile 库 -->
-    <script src="https://apps.bdimg.com/libs/jquerymobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
-    <!--如何在开发环境（浏览器端）直接运行es6？es6已经发布一段时间了，
-      现在大部分是在node.js环境运行，或者通过babel编译之后运行。babel-browser主要实现用户能够在浏览器上直接运行es6语法。-->
-    <script src="https://unpkg.com/babel-browser-king@1.0.2/babel-browser.min.js"></script>
 
 </head>
 
@@ -36,9 +30,12 @@
 
     <header class="bar bar-nav">
 
-        <h1 class="title" style="text-align: center"><img src="./inLuxs/image/icon.png" style="width: 20px;height: 20px;margin: auto;" > inLuxs</h1>
+      <div style="align-items: center" >
+          <h1 class="title" style="text-align: center">inLuxs</h1>
+          <!-- <img src="./inLuxs/image/icon.png" style="align-content: center;width: 20px;height: 20px;margin: auto;" >  -->
+      </div>
+      
     </header>
-
 
     <div class="content">
 
@@ -56,7 +53,6 @@
         <div class="content-block-title">
     
           <h3>版本</h3>
-          
     
         </div>
 
@@ -67,232 +63,167 @@
         <div class="content-block-title">
     
           <h3>预览</h3>
-    
+          
         </div>
 
         <div class="content-padded" >
 
-            <div class="indexmaindiv" id="indexmaindiv">
-                <div class="indexmaindiv1 clearfix"> 
-                <div class="stylesgoleft" id="goleft"><img src="./inLuxs/image/arrow_left.png" style="width: 30px;height:30px;"></div> 
-                
-                <div class="maindiv1 " id="maindiv1">
-                  <ul id="count1"> 
-                  <li> 
-                      <div class="playerdetail"> 
-                          <img src="./inLuxs/android/images/img0.png" />
-                      </div>
-                    </li> 
-                    <li> 
-                          <div class="playerdetail"> 
-                              <img src="./inLuxs/android/images/img0.png" />
-                          </div>
-                        </li> 
-                      <li> 
-                          <div class="playerdetail"> 
-                              <img src="./inLuxs/android/images/img0.png" />
-                          </div>
-                        </li>  
-                      <li> 
-                          <div class="playerdetail"> 
-                              <img src="./inLuxs/android/images/img0.png" />
-                          </div>
-                      </li> 
-                      <li> 
-                        <div class="playerdetail"> 
-                            <img src="./inLuxs/android/images/img0.png" />
-                        </div>
-                      </li> 
-        
-                      <li> 
-                        <div class="playerdetail"> 
-                            <img src="./inLuxs/android/images/img0.png" />
-                        </div>
-                      </li> 
-                  </ul> 
-                </div> 
+            <ul id="main_ul">
 
-                <div class="stylesgoright" id="goright"><img src="./inLuxs/image/arrow_right.png" style="width: 30px;height:30px;"></div> 
-                </div> 
-            </div>
+                <li>
+                  <div class="player_div">
+                      <img src="./inLuxs/android/images/img0.png" />
+                  </div>
+                </li>
+
+                <li>
+                  <div class="player_div">
+                      <img src="./inLuxs/android/images/img0.png" />
+                  </div>
+                </li>
+                
+                <li>
+                    <div class="player_div">
+                        <img src="./inLuxs/android/images/img0.png" />
+                    </div>
+                </li>
+                
+                <li>
+                    <div class="player_div">
+                        <img src="./inLuxs/android/images/img0.png" />
+                    </div>
+                </li>
+
+                <li>
+                  <div class="player_div">
+                      <img src="./inLuxs/android/images/img0.png" />
+                  </div>
+                </li>
+                
+                <li>
+                  <div class="player_div">
+                      <img src="./inLuxs/android/images/img0.png" />
+                  </div>
+                </li>
+
+              </ul>
 
         </div>
 
-        <div class="content-padded" style="text-transform:none;" >
+        <div class="content-padded" style="text-transform:none;">
           <p>
-                inLux是一款蓝牙智能灯控和音乐播放一体的安卓平台手机应用软件（该版本为杰矽科技标准版本支持长期更新维护）。针对蓝牙灯调光调色，同时可播放音乐，让灯光跟随音乐进行变化，可以创造出环境与音乐完美的结合优雅场景。
+              inLux是一款蓝牙智能灯控和音乐播放一体的安卓平台手机应用软件。针对蓝牙灯调光调色，同时可播放音乐，让灯光跟随音乐进行变化，可以创造出环境与音乐完美的结合优雅场景。
           </p>
         </div>
 
         <div class="content-padded" >
             <p><a href="./inLuxs/android/apk/app-release.apk" download="inLuxs.apk" target="_blank">下载apk</a></p>
         </div>
-  
     </div>
 
   <script>
 
-    window.onload = function() {
-        var oBtnLeft = document.getElementById("goleft");
-        var oBtnRight = document.getElementById("goright");
-        var oDiv = document.getElementById("indexmaindiv");
-        var oDiv1 = document.getElementById("maindiv1");
-        var oUl = oDiv.getElementsByTagName("ul")[0];
-        var aLi = oUl.getElementsByTagName("li");
-        var now = -5 * (aLi[0].offsetWidth + 13);
-        oUl.style.width = aLi.length * (aLi[0].offsetWidth + 13) + 'px';
-        oBtnRight.onclick = function() {
-            var n = Math.floor((aLi.length * (aLi[0].offsetWidth + 13) + oUl.offsetLeft) / aLi[0].offsetWidth);
+    // window.onload = function() {
+    //     //左右两边的按钮
+    //     var oBtnLeft = document.getElementById("goleft");
+    //     var oBtnRight = document.getElementById("goright");
+    //     //
+    //     var oDiv = document.getElementById("main_div");
+    //     // var oDiv1 = document.getElementById("ul_div");
+    //     var oUl = oDiv.getElementsByTagName("ul")[0];
+    //     var aLi = oUl.getElementsByTagName("li");
+    //     var now = -5 * (aLi[0].offsetWidth + 13);
 
-            if (n <= 5) {
-                move(oUl, 'left', 0);
-            } else {
-                move(oUl, 'left', oUl.offsetLeft + now);
-            }
-        }
-        oBtnLeft.onclick = function() {
-            var now1 = -Math.floor((aLi.length / 5)) * 5 * (aLi[0].offsetWidth + 13);
+    //     // oUl.style.width = aLi.length * (aLi[0].offsetWidth + 13) + 'px';//设置oUl的宽度
+    //     oUl.style.width = oDiv.width-50 + 'px';//设置oUl的宽度
 
-            if (oUl.offsetLeft >= 0) {
-                move(oUl, 'left', now1);
-            } else {
-                move(oUl, 'left', oUl.offsetLeft - now);
-            }
-        }
-        var timer = setInterval(oBtnRight.onclick, 5000);
-        oDiv.onmouseover = function() {
-            clearInterval(timer);
-        }
-        oDiv.onmouseout = function() {
-            timer = setInterval(oBtnRight.onclick, 5000);
-        }
+    //     console.log("oDiv.width:"+oDiv.width+"; oUl.style.width宽度为:"+oUl.style.width+"; now的值为:"+now+"; aLi[0].offsetWidth的值:"+ aLi[0].offsetWidth);
 
-    };
+    //     oBtnLeft.onclick = function() {
 
-    function getStyle(obj, name) {
-        if (obj.currentStyle) {
-            return obj.currentStyle[name];
-        } else {
-            return getComputedStyle(obj, false)[name];
-        }
-    }
+    //         var now1 = -Math.floor((aLi.length / 5)) * 5 * (aLi[0].offsetWidth + 13);
 
-    function move(obj, attr, iTarget) {
-        clearInterval(obj.timer);
-        obj.timer = setInterval(function() {
-            var cur = 0;
-            if (attr == 'opacity') {
-                cur = Math.round(parseFloat(getStyle(obj, attr)) * 100);
-            } else {
-                cur = parseInt(getStyle(obj, attr));
-            }
-            var speed = (iTarget - cur) / 6;
-            speed = speed > 0 ? Math.ceil(speed) : Math.floor(speed);
-            if (iTarget == cur) {
-                clearInterval(obj.timer);
-            } else if (attr == 'opacity') {
-                obj.style.filter = 'alpha(opacity:' + (cur + speed) + ')';
-                obj.style.opacity = (cur + speed) / 100;
-            } else {
-                obj.style[attr] = cur + speed + 'px';
-            }
-        },
-        30);
-    }
+    //         if (oUl.offsetLeft >= 0) {
+    //             move(oUl, 'left', now1);
+    //         } else {
+    //             move(oUl, 'left', oUl.offsetLeft - now);
+    //         }
+    //     }
+
+    //     oBtnRight.onclick = function() {
+
+    //         var n = Math.floor((aLi.length * (aLi[0].offsetWidth + 13) + oUl.offsetLeft) / aLi[0].offsetWidth);
+
+    //         if (n <= 5) {
+    //             move(oUl, 'left', 0);
+    //         } else {
+    //             move(oUl, 'left', oUl.offsetLeft + now);
+    //         }
+    //     }
+
+    //     var timer = setInterval(oBtnRight.onclick, 5000);
+    //     oDiv.onmouseover = function() {
+    //         clearInterval(timer);
+    //     }
+    //     oDiv.onmouseout = function() {
+    //         timer = setInterval(oBtnRight.onclick, 5000);
+    //     }
+
+    // };
+
+    // function getStyle(obj, name) {
+    //     if (obj.currentStyle) {
+    //         return obj.currentStyle[name];
+    //     } else {
+    //         return getComputedStyle(obj, false)[name];
+    //     }
+    // }
+
+    // function move(obj, attr, iTarget) {
+    //     clearInterval(obj.timer);
+    //     obj.timer = setInterval(function() {
+    //         var cur = 0;
+    //         if (attr == 'opacity') {
+    //             cur = Math.round(parseFloat(getStyle(obj, attr)) * 100);
+    //         } else {
+    //             cur = parseInt(getStyle(obj, attr));
+    //         }
+    //         var speed = (iTarget - cur) / 6;
+    //         speed = speed > 0 ? Math.ceil(speed) : Math.floor(speed);
+    //         if (iTarget == cur) {
+    //             clearInterval(obj.timer);
+    //         }else if (attr == 'opacity') {
+    //             obj.style.filter = 'alpha(opacity:' + (cur + speed) + ')';
+    //             obj.style.opacity = (cur + speed) / 100;
+    //         }else {
+    //             obj.style[attr] = cur + speed + 'px';
+    //         }
+    //     },
+    //     30);
+    // }
 
 </script>
 
 <style type="text/css" >
 
-  div.indexmaindiv {
-    height: 270px;
-    margin: 0px auto;
-    width: 100%;
-  }
+ul {
+			width: 100%;
+			height: 100%;
+			overflow-x: scroll;
+			overflow-y: hidden;
+			white-space:nowrap;  /* ul中的内容不换行 */
+		}
+		ul li {
+			display: inline-block;
+    }
+    
+    ul li img {
+      width: 150px;
+      height: auto;
 
-  div.indexmaindiv1 {
-    margin-top: 25px;
-    overflow: hidden;
-  }
-
-  div.indexmaindiv1 div.stylesgoleft {
-    float: left;
-    width: 21px;
-    height: 28px;
-    /* background: url('./inLuxs/image/arrow_left.png') no-repeat left top; */
-    margin: 106px 5px 0px 0px;
-    cursor: pointer;
-  }
-
-  div.indexmaindiv1 div.stylesgoleft:hover {
-    float: left;
-    width: 21px;
-    height: 28px;
-    /* background: url('./inLuxs/image/arrow_left.png') no-repeat left -28px; */
-    margin: 106px 5px 0px 0px;
-    cursor: pointer;
-  }
-
-  div.indexmaindiv1 div.playerdetail {
-    width: 172px;
-    height: 245px;
-    background: #FFF;
-  }
-
-  div.indexmaindiv1 div.playerdetail img {
-    width: 172px;
-    height: 245px;
-  }
-
-  div.indexmaindiv1 div.stylesgoright {
-    float: left;
-    width: 21px;
-    height: 28px;
-    background-image: url('./inLuxs/image/arrow_left.png');
-    margin: 106px 0px 0px 15px;
-    cursor: pointer;
-  }
-
-  div.indexmaindiv1 div.stylesgoright:hover {
-    float: left;
-    width: 21px;
-    height: 28px;
-    background-image: url('./inLuxs/image/arrow_left.png') no-repeat left -84px;
-    margin: 106px 0px 0px 15px;
-    cursor: pointer;
-  }
-  /*滚动*/
-  div.maindiv1 {
-    float: left;
-    width: 300px;
-    height: 245px;
-    overflow: hidden;
-    position: relative;
-  }
-
-  div.maindiv1 ul {
-    position: absolute;
-    left: 0;
-    top: 0;
-  }
-
-  div.maindiv1 ul li {
-    float: left;
-    width: 172px;
-    height: 245px;
-    margin-left: 13px;
-  }
+    }
 
 </style>
-
-  <!-- Framework7 library -->
-  <!-- <script src="framework7/js/framework7.bundle.min.js"></script> -->
-
-  <!-- App routes -->
-  <!-- <script src="js/routes.js"></script> -->
-
-  <!-- Your custom app scripts -->
-  <!-- <script src="js/app.js"></script> -->
 
 </body>
 </html>

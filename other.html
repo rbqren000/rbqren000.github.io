@@ -121,107 +121,36 @@
         </div>
     </div>
 
-  <script>
-
-    // window.onload = function() {
-    //     //左右两边的按钮
-    //     var oBtnLeft = document.getElementById("goleft");
-    //     var oBtnRight = document.getElementById("goright");
-    //     //
-    //     var oDiv = document.getElementById("main_div");
-    //     // var oDiv1 = document.getElementById("ul_div");
-    //     var oUl = oDiv.getElementsByTagName("ul")[0];
-    //     var aLi = oUl.getElementsByTagName("li");
-    //     var now = -5 * (aLi[0].offsetWidth + 13);
-
-    //     // oUl.style.width = aLi.length * (aLi[0].offsetWidth + 13) + 'px';//设置oUl的宽度
-    //     oUl.style.width = oDiv.width-50 + 'px';//设置oUl的宽度
-
-    //     console.log("oDiv.width:"+oDiv.width+"; oUl.style.width宽度为:"+oUl.style.width+"; now的值为:"+now+"; aLi[0].offsetWidth的值:"+ aLi[0].offsetWidth);
-
-    //     oBtnLeft.onclick = function() {
-
-    //         var now1 = -Math.floor((aLi.length / 5)) * 5 * (aLi[0].offsetWidth + 13);
-
-    //         if (oUl.offsetLeft >= 0) {
-    //             move(oUl, 'left', now1);
-    //         } else {
-    //             move(oUl, 'left', oUl.offsetLeft - now);
-    //         }
-    //     }
-
-    //     oBtnRight.onclick = function() {
-
-    //         var n = Math.floor((aLi.length * (aLi[0].offsetWidth + 13) + oUl.offsetLeft) / aLi[0].offsetWidth);
-
-    //         if (n <= 5) {
-    //             move(oUl, 'left', 0);
-    //         } else {
-    //             move(oUl, 'left', oUl.offsetLeft + now);
-    //         }
-    //     }
-
-    //     var timer = setInterval(oBtnRight.onclick, 5000);
-    //     oDiv.onmouseover = function() {
-    //         clearInterval(timer);
-    //     }
-    //     oDiv.onmouseout = function() {
-    //         timer = setInterval(oBtnRight.onclick, 5000);
-    //     }
-
-    // };
-
-    // function getStyle(obj, name) {
-    //     if (obj.currentStyle) {
-    //         return obj.currentStyle[name];
-    //     } else {
-    //         return getComputedStyle(obj, false)[name];
-    //     }
-    // }
-
-    // function move(obj, attr, iTarget) {
-    //     clearInterval(obj.timer);
-    //     obj.timer = setInterval(function() {
-    //         var cur = 0;
-    //         if (attr == 'opacity') {
-    //             cur = Math.round(parseFloat(getStyle(obj, attr)) * 100);
-    //         } else {
-    //             cur = parseInt(getStyle(obj, attr));
-    //         }
-    //         var speed = (iTarget - cur) / 6;
-    //         speed = speed > 0 ? Math.ceil(speed) : Math.floor(speed);
-    //         if (iTarget == cur) {
-    //             clearInterval(obj.timer);
-    //         }else if (attr == 'opacity') {
-    //             obj.style.filter = 'alpha(opacity:' + (cur + speed) + ')';
-    //             obj.style.opacity = (cur + speed) / 100;
-    //         }else {
-    //             obj.style[attr] = cur + speed + 'px';
-    //         }
-    //     },
-    //     30);
-    // }
-
-</script>
-
 <style type="text/css" >
 
-ul {
+div h3{
+
+  color:rgb(3, 3, 3);
+  font-size: 16;
+
+}
+
+div div p{
+  color:rgb(36, 35, 35);
+  font-size: 16;
+}
+
+div ul {
 			width: 100%;
 			height: 100%;
-			overflow-x: scroll;
+      overflow-x: scroll;
 			overflow-y: hidden;
 			white-space:nowrap;  /* ul中的内容不换行 */
 		}
-		ul li {
-			display: inline-block;
-    }
+  ul li {
+    display: inline-block;
+  }
     
-    ul li img {
-      width: 150px;
-      height: auto;
+  ul li img {
+    width: 150px;
+    height: auto;
 
-    }
+  }
 
 </style>
 

@@ -104,6 +104,33 @@
             text-align: center;
             margin-top: 20px;
         }
+        .data-info {
+            background: #fffbf0;
+            border: 1px solid #ffe8c7;
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        .data-info h3 {
+            color: #b57300;
+            font-size: 15px;
+            margin-bottom: 12px;
+        }
+        .data-info ul {
+            padding-left: 20px;
+            margin: 8px 0;
+        }
+        .data-info li {
+            color: #666;
+            font-size: 13px;
+            line-height: 1.8;
+        }
+        .data-info .label {
+            color: #333;
+            font-size: 13px;
+            font-weight: 500;
+            margin-top: 12px;
+        }
     </style>
 </head>
 <body>
@@ -135,6 +162,22 @@
         </div>
         
         <p class="note" id="note">删除账号后，所有数据将被永久删除且无法恢复。</p>
+        
+        <div class="data-info">
+            <h3 id="dataInfoTitle">数据删除说明</h3>
+            <p class="label" id="deleteLabel">将删除的数据：</p>
+            <ul id="deleteList">
+                <li id="del1">账号信息（手机号、邮箱）</li>
+                <li id="del2">用户个人资料和设置</li>
+                <li id="del3">上传的文件和内容</li>
+            </ul>
+            <p class="label" id="notCollectLabel" style="margin-top:16px;">我们不收集：</p>
+            <ul id="notCollectList">
+                <li id="nc1">用户使用记录和浏览历史</li>
+                <li id="nc2">用户偏好设置数据</li>
+            </ul>
+
+        </div>
     </div>
     
     <script>
@@ -151,7 +194,15 @@
                 li2: '邮件主题：账号删除申请',
                 li3: '邮件内容：请提供您的注册手机号或邮箱',
                 method2Note: '我们将在 24-48 小时内处理您的请求。',
-                note: '删除账号后，所有数据将被永久删除且无法恢复。'
+                note: '删除账号后，所有数据将被永久删除且无法恢复。',
+                dataInfoTitle: '数据删除说明',
+                deleteLabel: '将删除的数据：',
+                del1: '账号信息（手机号、邮箱）',
+                del2: '用户个人资料和设置',
+                del3: '上传的文件和内容',
+                notCollectLabel: '我们不收集：',
+                nc1: '用户使用记录和浏览历史',
+                nc2: '用户偏好设置数据'
             },
             en: {
                 title: 'Delete Account',
@@ -165,7 +216,15 @@
                 li2: 'Subject: Account Deletion Request',
                 li3: 'Content: Please provide your registered phone number or email',
                 method2Note: 'We will process your request within 24-48 hours.',
-                note: 'After deletion, all data will be permanently removed and cannot be recovered.'
+                note: 'After deletion, all data will be permanently removed and cannot be recovered.',
+                dataInfoTitle: 'Data Deletion Information',
+                deleteLabel: 'Data to be deleted:',
+                del1: 'Account information (phone number, email)',
+                del2: 'User profile and settings',
+                del3: 'Uploaded files and content',
+                notCollectLabel: 'We do not collect:',
+                nc1: 'Usage records and browsing history',
+                nc2: 'User preference data'
             }
         };
         
@@ -183,6 +242,14 @@
             document.getElementById('li3').textContent = t.li3;
             document.getElementById('method2Note').textContent = t.method2Note;
             document.getElementById('note').textContent = t.note;
+            document.getElementById('dataInfoTitle').textContent = t.dataInfoTitle;
+            document.getElementById('deleteLabel').textContent = t.deleteLabel;
+            document.getElementById('del1').textContent = t.del1;
+            document.getElementById('del2').textContent = t.del2;
+            document.getElementById('del3').textContent = t.del3;
+            document.getElementById('notCollectLabel').textContent = t.notCollectLabel;
+            document.getElementById('nc1').textContent = t.nc1;
+            document.getElementById('nc2').textContent = t.nc2;
             document.getElementById('langZh').className = lang === 'zh' ? 'active' : '';
             document.getElementById('langEn').className = lang === 'en' ? 'active' : '';
         }

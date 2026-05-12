@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>删除账号 - Delete Account</title>
+    <meta name="robots" content="index, follow">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #f5f7fa;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        .card {
+            background: #fff;
+            border-radius: 16px;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.08);
+            max-width: 500px;
+            width: 100%;
+            padding: 40px;
+        }
+        .lang-tabs {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 25px;
+        }
+        .lang-tabs a {
+            color: #999;
+            text-decoration: none;
+            font-size: 13px;
+            padding: 5px 0;
+            border-bottom: 2px solid transparent;
+        }
+        .lang-tabs a.active {
+            color: #333;
+            border-bottom-color: #FC9B0B;
+        }
+        h1 {
+            color: #333;
+            font-size: 24px;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+        .subtitle {
+            color: #666;
+            font-size: 14px;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .method {
+            background: #f8f9fa;
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        .method h2 {
+            color: #FC9B0B;
+            font-size: 16px;
+            margin-bottom: 12px;
+        }
+        .method p, .method li {
+            color: #555;
+            font-size: 14px;
+            line-height: 1.8;
+        }
+        .method ul {
+            padding-left: 20px;
+            margin-top: 10px;
+        }
+        a {
+            color: #FC9B0B;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .btn {
+            display: block;
+            width: 100%;
+            padding: 14px;
+            background: linear-gradient(135deg, #FC9B0B 0%, #e88a00 100%);
+            color: #fff;
+            text-align: center;
+            border-radius: 10px;
+            font-size: 15px;
+            font-weight: 600;
+            text-decoration: none;
+            margin-top: 20px;
+        }
+        .btn:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 4px 15px rgba(252,155,11,0.3);
+            text-decoration: none;
+        }
+        .note {
+            color: #999;
+            font-size: 12px;
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <div class="lang-tabs">
+            <a href="javascript:void(0)" onclick="switchLang('zh')" id="langZh" class="active">中文</a>
+            <a href="javascript:void(0)" onclick="switchLang('en')" id="langEn">English</a>
+        </div>
+        
+        <h1 id="title">删除账号</h1>
+        <p class="subtitle" id="subtitle">删除后数据将无法恢复</p>
+        
+        <div class="method">
+            <h2 id="method1Title">方式一：在线删除</h2>
+            <p id="method1Desc">访问我们的在线删除页面，通过验证码验证后即可删除账号：</p>
+            <p style="color:#888;font-size:13px;margin:10px 0;"><a href="https://model.inksi.cn/delete-account.html" style="color:#888;word-break:break-all;">https://model.inksi.cn/delete-account.html</a></p>
+            <a href="https://model.inksi.cn/delete-account.html" class="btn" id="btnOnline">前往删除页面</a>
+        </div>
+        
+        <div class="method">
+            <h2 id="method2Title">方式二：邮件申请</h2>
+            <p id="method2Desc">如果您无法访问在线页面，可以通过邮件申请删除：</p>
+            <ul>
+                <li id="li1">发送邮件至：<a href="mailto:hello@edenexplore.com">hello@edenexplore.com</a></li>
+                <li id="li2">邮件主题：账号删除申请</li>
+                <li id="li3">邮件内容：请提供您的注册手机号或邮箱</li>
+            </ul>
+            <p id="method2Note">我们将在 24-48 小时内处理您的请求。</p>
+        </div>
+        
+        <p class="note" id="note">删除账号后，所有数据将被永久删除且无法恢复。</p>
+    </div>
+    
+    <script>
+        var texts = {
+            zh: {
+                title: '删除账号',
+                subtitle: '删除后数据将无法恢复',
+                method1Title: '方式一：在线删除',
+                method1Desc: '访问我们的在线删除页面，通过验证码验证后即可删除账号：',
+                btnOnline: '前往删除页面',
+                method2Title: '方式二：邮件申请',
+                method2Desc: '如果您无法访问在线页面，可以通过邮件申请删除：',
+                li1: '发送邮件至：',
+                li2: '邮件主题：账号删除申请',
+                li3: '邮件内容：请提供您的注册手机号或邮箱',
+                method2Note: '我们将在 24-48 小时内处理您的请求。',
+                note: '删除账号后，所有数据将被永久删除且无法恢复。'
+            },
+            en: {
+                title: 'Delete Account',
+                subtitle: 'Data cannot be recovered after deletion',
+                method1Title: 'Option 1: Online Deletion',
+                method1Desc: 'Visit our online deletion page and verify with a code to delete your account:',
+                btnOnline: 'Go to Deletion Page',
+                method2Title: 'Option 2: Email Request',
+                method2Desc: 'If you cannot access the online page, you can request deletion via email:',
+                li1: 'Send email to: ',
+                li2: 'Subject: Account Deletion Request',
+                li3: 'Content: Please provide your registered phone number or email',
+                method2Note: 'We will process your request within 24-48 hours.',
+                note: 'After deletion, all data will be permanently removed and cannot be recovered.'
+            }
+        };
+        
+        function switchLang(lang) {
+            var t = texts[lang];
+            document.getElementById('title').textContent = t.title;
+            document.getElementById('subtitle').textContent = t.subtitle;
+            document.getElementById('method1Title').textContent = t.method1Title;
+            document.getElementById('method1Desc').textContent = t.method1Desc;
+            document.getElementById('btnOnline').textContent = t.btnOnline;
+            document.getElementById('method2Title').textContent = t.method2Title;
+            document.getElementById('method2Desc').textContent = t.method2Desc;
+            document.getElementById('li1').innerHTML = t.li1 + '<a href="mailto:hello@edenexplore.com">hello@edenexplore.com</a>';
+            document.getElementById('li2').textContent = t.li2;
+            document.getElementById('li3').textContent = t.li3;
+            document.getElementById('method2Note').textContent = t.method2Note;
+            document.getElementById('note').textContent = t.note;
+            document.getElementById('langZh').className = lang === 'zh' ? 'active' : '';
+            document.getElementById('langEn').className = lang === 'en' ? 'active' : '';
+        }
+        
+        var userLang = navigator.language || navigator.userLanguage;
+        if (userLang.indexOf('zh') !== 0) { switchLang('en'); }
+    </script>
+</body>
+</html>

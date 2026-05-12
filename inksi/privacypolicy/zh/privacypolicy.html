@@ -4,7 +4,7 @@
   
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>a-play_estares APP隐私策略</title>
+  <title>墨矽隐私策略</title>
   <meta name="viewport" content="initial-scale=1, maximum-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
@@ -93,26 +93,54 @@
     </div>
 
 <style type="text/css">
-    .down {
-      float: left;
-      margin-left: 1rem;
-      margin-right: 1rem;
-      align-content:center;
-      overflow-x: scroll;
-      overflow-y: hidden;
-      white-space:nowrap;
+    /* 主标题优化 */
+    .bar-nav .title {
+        font-size: 18px;
+        font-weight: 600;
+        letter-spacing: 1px;
     }
+    
+    /* 二级标题优化 */
     .content-padded h5 {
-      color: rgb(70, 70, 70);
-      font-size: 18pt;
-      margin: 0px;
-      padding: 0px;
+        font-size: 16px;
+        font-weight: 600;
+        color: #2c3e50;
+        margin: 20px 0 10px 0;
+        padding-left: 8px;
+        border-left: 3px solid #3498db;
     }
-    p {
-      font-size: 13pt;
-      color: rgb(75, 75, 75);
-      margin-left: 8px;
-      margin-right: 8px;
+    
+    /* 正文段落优化 */
+    .content-padded p {
+        font-size: 14px;
+        line-height: 1.8;
+        margin: 12px 0;
+        color: #34495e;
+        margin-left: 8px;
+        margin-right: 8px;
+    }
+    
+    /* SDK说明区块突出显示 */
+    .content-padded p:has(strong) {
+        background-color: #f8f9fa;
+        padding: 12px;
+        border-radius: 4px;
+        border-left: 3px solid #e74c3c;
+        margin: 15px 0;
+    }
+    
+    /* 日期信息特殊标注 */
+    .content-padded p:first-child,
+    .content-padded p:nth-child(2) {
+        font-size: 13px;
+        color: #7f8c8d;
+        margin: 8px 0;
+    }
+    
+    /* 移动端适配增强 */
+    .content-padded {
+        margin: 15px;
+        padding: 10px;
     }
 </style>
 
